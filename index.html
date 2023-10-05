@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feedback</title>
+    <style>
+        label {
+            float: left;
+            width: 150px;
+        }
+
+        #container {
+            width: 700px;
+            margin: auto;
+            background-color: beige;
+        }
+
+        main {
+            padding: 50px;
+        }
+        .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+th{
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+<div id="container">
+    <main>
+        <h2>Feedback</h2>
+        <br>
+        <form method="post" onsubmit="insertFormDataIntoTable(); return false;">
+            <label id="title">Title*:</label>
+            <input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+            <input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+            <input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+            <br><br>
+            <label for="firstName">First Name*:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required="required"/>
+            <div id="firstNameStatus" style="display: none;"></div>
+            <br><br>
+
+            <label for="lastName">Last Name*:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required="required"/>
+            <div id="lastNameStatus" style="display: none;"></div>
+            <br><br>
+
+            <label for="emailId">Email Id*:</label>
+            <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required"/>
+            <div id="emailIdStatus" style="display: none;"></div>
+            <br><br>
+
+            <label for="phoneNumber">Phone Number*:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxxxxxx" required="required"/>
+            <div id="phoneNumberStatus" style="display: none;"> </div>
+            <br><br>
+
+            <label for="streetAddress1">Street Address 1*:</label>
+            <input type="text" name="streetaddress1" id="streetaddress1" placeholder="Street Address 1" required="required"/>
+            <div id="streetAddress1Status" style="display: none;"> </div>
+            <br><br>
+
+            <label for="streetAddress2">Street Address 2:</label>
+            <input type="text" name="streetaddress2" id="streetaddress2" placeholder="Street Address 2"/>
+            <br><br>
+
+            <label for="city">City*:</label>
+            <input type="text" name="city" id="city" placeholder="City" required="required"/>
+            <div id="cityStatus" style="display: none;"> </div>
+            <br><br>
+
+            <label for="state">State*:</label>
+            <input type="text" name="state" id="state" placeholder="State" required="required"/>
+            <div id="stateStatus" style="display: none;"> </div>
+            <br><br>
+
+            <label for="zipcode">ZipCode*:</label>
+            <input type="text" name="zipcode" id="zipcode" placeholder="xxxxx" required="required"/>
+            <div id="zipcodeStatus" style="display: none;"> </div>
+            <br><br>
+
+            <!-- Add the select list with an onChange event -->
+            <label for="selectOption">Select Weather Preference:</label>
+            <select name="selectOption" id="selectOption" onchange="handleSelectChange()">
+                <option value="" disabled selected>Select your option</option>
+                <option value="option1">Fall</option>
+                <option value="option2">Spring</option>
+                <option value="option3">Summer</option>
+            </select>
+            <br><br>
+
+            <!-- Add the checkbox and text field (initially hidden) -->
+            <div id="checkboxContainer" style="display: none;">
+                <label for="enableCheckbox1">Checkbox 1:</label>
+                <input type="checkbox" name="enableCheckbox" id="enableCheckbox1" onchange="toggleTextField('enableCheckbox2','textField')" />
+                <br><br>
+                <label for="enableCheckbox2">Checkbox 2:</label>
+                <input type="checkbox" name="enableCheckbox" id="enableCheckbox2" onchange="toggleTextField('enableCheckbox2','textField')" />
+                <br><br>
+                <label for="textField" id="textFieldLabel" style="display: none;">Text Field 1*:</label>
+                <input type="text" name="textField" id="textField" placeholder="Text Field 1" style="display: none;" required="required" />
+                <br><br>
+            </div>
+
+            <label for="source">How did you hear*:</label>
+            <input type='checkbox' name="source" value="facebook" required="required"/> Facebook
+            <input type='checkbox' name="source" value="google"/> Google
+            <input type='checkbox' name="source" value="yelp"/> Yelp
+            <br><br>
+
+            <label for="comments">Comments*:</label>
+            <textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required="required"></textarea>
+            <div id="commentsStatus" style="display: none;"> </div>
+            <br><br>
+            <input type="Submit" value="Submit">
+            <input type="Reset" onclick="resetForm()">
+            <br><br>
+        </form>
+    </main>
+</div>
+<br><br><br>
+<table id="formDataTable" border="1" class="center">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Phone Number</th>
+            <th>Street Address 1</th>
+            <th>Street Address 2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
+            <th>Weather Preference</th>
+            <th>Favorite Places</th>
+            <th>How did you hear</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data rows will be added here -->
+    </tbody>
+</table>
+<br><br><br>
+<script src="script.js"></script>
+</body>
+</html>
