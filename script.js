@@ -6,20 +6,29 @@ function handleSelectChange() {
     checkboxContainer.innerHTML = "";
 
     // Show or hide the checkbox and add corresponding text fields based on the selected option
-    if (selectOption.value === "option1") {
+    if (selectOption.value === "Fall") {
         createCheckbox("Veg", "enableCheckbox1", "textField");
         createCheckbox("Non-Veg", "enableCheckbox2", "textField");
         createTextField("textField", "textFieldLabel");
 
     }
-    else if (selectOption.value === "option2") {
+    else if (selectOption.value === "Spring") {
         createCheckbox("Tea", "enableCheckbox1", "textField");
         createCheckbox("Coffee", "enableCheckbox2", "textField");
         createTextField("textField", "textFieldLabel");
     }
-    else if (selectOption.value === "option3") {
+    else if (selectOption.value === "Summer") {
         createCheckbox("IceCream", "enableCheckbox1", "textField");
         createCheckbox("ColdDrink", "enableCheckbox2", "textField");
+        createTextField("textField", "textFieldLabel");
+    }
+    else if (selectOption.value === "Rainy") {
+        createCheckbox("Umbrella", "enableCheckbox1", "textField");
+        createCheckbox("Raincoat", "enableCheckbox2", "textField");
+        createTextField("textField", "textFieldLabel");
+    }else if (selectOption.value === "Winter") {
+        createCheckbox("Sweater", "enableCheckbox1", "textField");
+        createCheckbox("Jacket", "enableCheckbox2", "textField");
         createTextField("textField", "textFieldLabel");
     }
 }
